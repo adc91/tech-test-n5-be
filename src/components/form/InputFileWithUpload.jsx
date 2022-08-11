@@ -34,7 +34,7 @@ const InputFileWithUpload = ({
                 const { data } = response;
 
                 setFilePreview(data.url);
-                setValue(data.url);
+                setValue(`${fieldName}_file`, data.url);
             })
             .catch(() => {
                 setFilePreview("");
