@@ -2,6 +2,7 @@ import {
     StyledError,
     StyledFormControl,
     StyledInput,
+    StyledTextArea,
     StyledLabel,
 } from "../styles/Form.styled";
 import InputFileWithUpload from "./InputFileWithUpload";
@@ -19,6 +20,18 @@ const FormMovieInfo = ({ setValue, getValues, register, errors }) => {
                 ></StyledInput>
                 {errors?.title && (
                     <StyledError>{errors?.title.message}</StyledError>
+                )}
+            </StyledFormControl>
+
+            <StyledFormControl>
+                <StyledLabel>Descripción:</StyledLabel>
+                <StyledTextArea
+                    {...register("description", {
+                        required: "Por favor, ingrese la descripción.",
+                    })}
+                ></StyledTextArea>
+                {errors?.description && (
+                    <StyledError>{errors?.description.message}</StyledError>
                 )}
             </StyledFormControl>
 

@@ -33,10 +33,27 @@ export const StyledInput = styled.input`
     font-weight: 400;
     line-height: 15px;
     padding: 10px;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     width: 100%;
-    margin-bottom: ${(props) => props.marginBottom || "0"}
-}
+    margin-bottom: ${(props) => props.marginBottom || "0"};
+`;
+
+export const StyledTextArea = styled.textarea`
+    display: block;
+    width: 100%;
+    min-height: 100px;
+    padding: 5px 10px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    appearance: none;
+    border-radius: 5px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin-bottom: ${(props) => props.marginBottom || "0"};
 `;
 
 export const StyledError = styled.div`

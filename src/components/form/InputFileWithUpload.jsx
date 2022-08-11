@@ -33,7 +33,7 @@ const InputFileWithUpload = ({
             .then((response) => {
                 const { data } = response;
 
-                setFilePreview(data.url);
+                setFilePreview(`${API_URL}/images/${data.file}`);
                 setValue(`${fieldName}_file`, data.file);
             })
             .catch(() => {

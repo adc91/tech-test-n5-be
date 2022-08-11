@@ -44,6 +44,7 @@ const FormMovieMain = () => {
         if (data.actors.length) {
             const formData = new FormData();
             formData.append("title", data.title);
+            formData.append("description", data.description);
             formData.append("cover", data.cover_file);
             formData.append("actors", JSON.stringify(data.actors));
 
