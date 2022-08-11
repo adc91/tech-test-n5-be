@@ -33,8 +33,8 @@ const InputFileWithUpload = ({
             .then((response) => {
                 const { data } = response;
 
-                setFilePreview(`${API_URL}/images/${data.file}`);
-                setValue(`${fieldName}_file`, data.file);
+                setFilePreview(data.url);
+                setValue(data.url);
             })
             .catch(() => {
                 setFilePreview("");
@@ -76,7 +76,7 @@ const InputFileWithUpload = ({
                     value: "",
                 })}
             />
-            {fileInputWatch > 0 && (
+            {fileInputWatch > 0 || filePreview.length > 0 ? (
                 <StyledImgPreview>
                     <StyledImg
                         width="150px"
@@ -84,7 +84,7 @@ const InputFileWithUpload = ({
                         className={onUpload ? "do-upload__active" : ""}
                     />
                 </StyledImgPreview>
-            )}
+            ) : null}
         </>
     );
 };
